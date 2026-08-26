@@ -1,0 +1,207 @@
+:root {
+  --bg: #f6f1e7;
+  --paper: #fffdf7;
+  --ink: #2b241b;
+  --muted: #7a6f5f;
+  --wood: #8b5e34;
+  --wood-dark: #5f3f22;
+  --gold: #b98a2f;
+  --good: #3f7d4e;
+  --warn: #b98a2f;
+  --bad: #a4432f;
+  --shadow: 0 10px 30px rgba(43, 36, 27, 0.12);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: radial-gradient(circle at top, #fff8e8, var(--bg));
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 0.75rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.courtroom-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: end;
+  background: linear-gradient(135deg, var(--wood), var(--wood-dark));
+  color: #fff7e6;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.courtroom-header h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.courtroom-header p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 247, 230, 0.82);
+  max-width: 62ch;
+}
+
+.panel {
+  background: var(--paper);
+  border: 1px solid rgba(95, 63, 34, 0.18);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  font-size: 1.15rem;
+  border-bottom: 2px solid rgba(185, 138, 47, 0.35);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.witness {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.witness-card {
+  border: 1px solid rgba(95, 63, 34, 0.22);
+  border-radius: 10px;
+  padding: 0.85rem;
+  background: linear-gradient(180deg, #fffdf7, #f8f0df);
+}
+
+.witness-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.witness-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  border-left: 3px solid var(--gold);
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 0.65rem 1rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.32rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(185, 138, 47, 0.18);
+}
+
+.timeline .time {
+  font-weight: 700;
+  color: var(--wood-dark);
+}
+
+.timeline .detail {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.credibility {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.credibility-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 2fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.meter {
+  height: 10px;
+  background: rgba(95, 63, 34, 0.14);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--bad), var(--warn), var(--good));
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.clue {
+  border-left: 4px solid var(--warn);
+  background: #fff8e8;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+}
+
+.clue strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.clue p {
+  margin: 0;
+  color: var(--muted);
+  font
